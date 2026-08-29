@@ -143,29 +143,37 @@ p{ margin:0; }
 
 .menu-toggle{
   display:none;
-  align-items:center; gap:.6em;
-  height: 38px; padding: 0 14px;
+  align-items:center; justify-content:center;
+  width: 44px; height: 38px;
   border: 1px solid var(--line);
   border-radius: 2px;
   background: transparent;
-  font-family: var(--font-head);
-  font-weight: 700; font-size: .82rem; letter-spacing:.1em; text-transform:uppercase;
-  color: var(--ink);
   cursor: pointer;
+  flex-shrink: 0;
 }
-.menu-toggle .ind{ font-family: var(--font-head); font-size: 1rem; line-height:1; }
-.menu-toggle.is-open .ind::before{ content:"×"; }
-.menu-toggle:not(.is-open) .ind::before{ content:"+"; }
+.menu-toggle .beams{ position:relative; width:20px; height:14px; }
+.menu-toggle .beams span{
+  position:absolute; left:0; height:2px; background:var(--ink);
+  transition: top .2s ease, width .2s ease, transform .2s ease, opacity .2s ease;
+}
+.menu-toggle .beams span:nth-child(1){ top:0;   width:13px; }
+.menu-toggle .beams span:nth-child(2){ top:6px; width:20px; }
+.menu-toggle .beams span:nth-child(3){ top:12px; width:16px; }
+.menu-toggle.is-open .beams span:nth-child(1){ top:6px; width:20px; transform:rotate(45deg); }
+.menu-toggle.is-open .beams span:nth-child(2){ opacity:0; }
+.menu-toggle.is-open .beams span:nth-child(3){ top:6px; width:20px; transform:rotate(-45deg); }
 
 .mobile-menu{
-  position: absolute; left:0; right:0; top:100%;
+  position: fixed; left:0; right:0; top:78px;
+  z-index: 499;
   background: rgba(11,11,12,.97);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-soft);
   max-height: 0; overflow: hidden;
   transition: max-height .25s ease;
 }
-.mobile-menu.is-open{ max-height: 420px; }
+.mobile-menu.is-open{ max-height: calc(100vh - 78px); overflow-y: auto; }
 .mobile-menu .wrap{ padding-top:.5rem; padding-bottom:1.6rem; }
 .mobile-menu li{ border-bottom: 1px solid var(--line-soft); }
 .mobile-menu a{
@@ -251,7 +259,8 @@ section.tight{ padding: 54px 0; }
 /* ---------- photo grid (homepage featured work) ---------- */
 .photo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
 .photo-grid figure{ margin:0; background: var(--bg); display:flex; flex-direction:column; }
-.photo-grid img{ width:100%; aspect-ratio: 4/3; object-fit:cover; }
+.photo-grid img{ width:100%; aspect-ratio: 4/3; object-fit:cover; object-position: center center; }
+.photo-grid img.obj-headlight{ object-position: center 30%; }
 .photo-grid figcaption{ padding: 1rem 1.2rem; font-size:.85rem; color: var(--ink-faint); }
 .photo-grid figcaption strong{ color: var(--ink-dim); font-weight:600; display:block; margin-bottom:.2rem; }
 
