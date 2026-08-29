@@ -1,29 +1,30 @@
 /* ============================================================
    Retrofit Illumination — house style
-   Concrete, glass, and glow. Built like a spec sheet, not a template.
+   A garage at night, not a product datasheet.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Kalam:wght@700&display=swap');
 
 :root{
-  --bg:        #0a0b0d;
-  --bg-alt:    #101216;
-  --panel:     #15171c;
-  --panel-2:   #1b1e24;
-  --line:      #2b2e35;
-  --line-soft: #202329;
-  --ink:       #eef0f2;
-  --ink-dim:   #9aa0aa;
-  --ink-faint: #666b74;
+  --bg:        #0e0c0a;
+  --bg-alt:    #16120e;
+  --panel:     #1c1712;
+  --panel-2:   #221b15;
+  --line:      #3a2f24;
+  --line-soft: #2a231c;
+  --ink:       #f3ede4;
+  --ink-dim:   #b3a596;
+  --ink-faint: #7a6e60;
   --amber:     #ff6a1a;
   --amber-soft:#ffb04d;
-  --cyan:      #26e0ff;
-  --violet:    #8a7bff;
+  --cyan:      #3ecfb8;
+  --violet:    #a98bff;
   --danger:    #ff3b3b;
 
-  --font-head: 'Space Grotesk', 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-head: 'Archivo Black', 'Segoe UI', sans-serif;
+  --font-hand: 'Kalam', cursive;
+  --font-mono: 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 
   --max: 1180px;
   --edge: clamp(20px, 5vw, 64px);
@@ -57,7 +58,8 @@ body::before{
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 ul{ margin:0; padding:0; list-style:none; }
-h1,h2,h3,h4{ font-family: var(--font-head); font-weight:600; margin:0; letter-spacing:-.01em; }
+h1,h2,h3,h4{ font-family: var(--font-body); font-weight:800; margin:0; letter-spacing:-.01em; }
+h1, .sec-head h2, .hero h1{ font-family: var(--font-head); font-weight:400; letter-spacing:0; text-transform: uppercase; }
 p{ margin:0; }
 
 .wrap{ max-width: var(--max); margin: 0 auto; padding-left: var(--edge); padding-right: var(--edge); }
@@ -66,20 +68,22 @@ p{ margin:0; }
 
 /* ---------- utility text ---------- */
 .eyebrow{
-  font-family: var(--font-mono);
-  font-size: .72rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .01em;
   color: var(--amber-soft);
   display:flex;
   align-items:center;
   gap:.6em;
+  transform: rotate(-1deg);
 }
 .eyebrow::before{
   content:"";
-  width: 18px; height: 1px;
+  width: 22px; height: 2px;
   background: var(--amber);
   display:inline-block;
+  transform: rotate(-3deg);
 }
 .lede{ color: var(--ink-dim); font-size: 1.05rem; max-width: 56ch; }
 
@@ -139,19 +143,19 @@ p{ margin:0; }
   box-shadow: 0 0 10px 2px rgba(255,106,26,.65);
 }
 .brand .tag{
-  font-family: var(--font-mono);
-  font-size: .62rem;
-  letter-spacing: .22em;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: 0;
   color: var(--ink-faint);
-  text-transform: uppercase;
 }
 
 .nav-links{ display:flex; align-items:center; gap:2.1rem; }
 .nav-links a{
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  letter-spacing: .05em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .92rem;
+  letter-spacing: 0;
   color: var(--ink-dim);
   position: relative;
   padding: .3rem 0;
@@ -165,10 +169,11 @@ p{ margin:0; }
 }
 
 .btn{
-  font-family: var(--font-mono);
-  font-size: .76rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .01em;
+  text-transform: none;
   padding: .78em 1.3em;
   border: 1px solid var(--amber);
   color: var(--bg);
@@ -238,17 +243,17 @@ p{ margin:0; }
 }
 .hero-stats div:last-child{ border-right:none; }
 .hero-stats .num{
-  font-family: var(--font-mono);
+  font-family: var(--font-head);
+  font-weight: 400;
   color: var(--amber-soft);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   display:block;
 }
 .hero-stats .lbl{
-  font-family: var(--font-mono);
-  font-size: .68rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .78rem;
   color: var(--ink-faint);
-  text-transform: uppercase;
-  letter-spacing: .08em;
 }
 .hero-actions{ display:flex; gap: 1rem; margin-top: 2.2rem; flex-wrap:wrap; }
 
@@ -259,15 +264,16 @@ p{ margin:0; }
   background: var(--panel);
   aspect-ratio: 4/5;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
-  padding: 1.1rem;
-  display:flex; flex-direction:column; justify-content:space-between;
+  overflow: hidden;
 }
-.hero-art .art-head{
-  display:flex; justify-content:space-between; align-items:flex-start;
-  font-family: var(--font-mono); font-size:.65rem; color:var(--ink-faint);
-  text-transform:uppercase; letter-spacing:.08em;
+.hero-art svg, .hero-art img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero-art .cap{
+  position:absolute; left:1.1rem; bottom:1.1rem; z-index:2;
+  font-family: var(--font-hand); font-weight:700; font-size: .95rem;
+  color: var(--ink); background: rgba(14,12,10,.78);
+  display:inline-block; padding:.4em .7em; transform: rotate(-1deg);
+  max-width: calc(100% - 2.2rem);
 }
-.hero-art svg{ width:100%; height:auto; }
 
 /* ============ SECTIONS ============ */
 section{ padding: 84px 0; }
@@ -279,13 +285,8 @@ section.tight{ padding: 56px 0; }
   border-bottom: 1px solid var(--line-soft);
   padding-bottom: 1.4rem;
 }
-.sec-head h2{ font-size: clamp(1.7rem, 3vw, 2.4rem); margin-top:.4em; }
+.sec-head h2{ font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin-top:.4em; }
 .sec-head .lede{ margin-top:.5em; }
-.sec-num{
-  font-family: var(--font-mono);
-  color: var(--ink-faint);
-  font-size: .85rem;
-}
 
 .alt{ background: var(--bg-alt); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
 
@@ -361,7 +362,7 @@ section.tight{ padding: 56px 0; }
   position:relative;
   overflow:hidden;
 }
-.prod .prod-art svg{ position:absolute; inset:0; width:100%; height:100%; }
+.prod .prod-art svg, .prod .prod-art img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .prod .prod-body{ padding: 1.3rem 1.3rem 1.5rem; flex:1; display:flex; flex-direction:column; }
 .prod .kicker{
   font-family: var(--font-mono);
@@ -483,13 +484,15 @@ footer{ border-top: 1px solid var(--line-soft); padding: 56px 0 30px; background
   aspect-ratio: 4/3; position:relative; overflow:hidden;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
-.build-art svg{ position:absolute; inset:0; width:100%; height:100%; }
+.build-art svg, .build-art img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .build-copy .eyebrow{ margin-bottom: .8rem; }
 .build-copy h3{ font-size: 1.5rem; margin-bottom: .7rem; }
 .build-copy p{ color: var(--ink-dim); margin-bottom: 1rem; }
-.spec-list{ display:flex; flex-wrap:wrap; gap: .5rem 1.6rem; margin-top: 1.2rem; }
-.spec-list div{ font-family: var(--font-mono); font-size: .78rem; }
-.spec-list span{ display:block; color: var(--ink-faint); font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; }
+.spec-list{ display:flex; flex-wrap:wrap; gap: .6rem; margin-top: 1.3rem; }
+.spec-list span{
+  font-family: var(--font-body); font-weight:600; font-size: .82rem;
+  color: var(--ink-dim); border:1px solid var(--line); padding:.45em .8em;
+}
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px){
