@@ -13,12 +13,12 @@
 <nav class="site-nav">
   <div class="wrap">
     <a href="index.html" class="brand">
-      <span class="mark"><span class="dot"></span>RETROFIT ILLUMINATION</span>
-      <span class="tag">Headlight &amp; Taillight Retrofits</span>
+      <span class="logo-slot">Logo</span>
+      <span class="mark">RETROFIT ILLUMINATION</span>
     </a>
     <div class="nav-cta">
       <div class="nav-links">
-        <a href="work.html">Work</a>
+        <a href="work.html" class="is-active">Work</a>
         <a href="shop.html">Shop</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -30,28 +30,29 @@
 
 <header class="page-head">
   <div class="wrap">
-    <span class="eyebrow">Build Log</span>
+    <span class="kicker">Build Log</span>
     <h1>The work.</h1>
-    <p class="lede" style="margin-top:1rem;">Every set of lights gets torn all the way down before we touch a wire. Here's a running log of what's come through the shop — what we changed, and how it's holding up.</p>
+    <p class="lede" style="margin-top:1rem;">Every set of lights gets torn all the way down before we touch a wire. Here's what's come through the shop, and the kind of work we take on.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
 
-    <div class="build">
-      <div class="build-art">
-        <img src="assets/work/rx8-halo-front-both.jpg" alt="Mazda RX-8 with dual halo ring headlights lit up, front view">
-        <div class="inset">
-          <img src="assets/work/rx8-halo-benchtest.jpg" alt="RX-8 headlight off the car, wired to a spare battery for a bench test">
+    <div class="feature-row">
+      <div class="feature-media">
+        <div class="gallery3">
+          <img src="assets/work/rx8-offside-closeup.jpg" alt="RX-8 halo headlight lit up at night, close up">
+          <img src="assets/work/rx8-driverside-closeup.jpg" alt="RX-8 halo headlight in daylight, close up">
+          <img src="assets/work/rx8-benchtest.jpg" alt="RX-8 headlight off the car, wired to a battery for a bench test">
         </div>
       </div>
-      <div class="build-copy">
-        <span class="eyebrow">RX-8 Build</span>
+      <div class="feature-copy">
+        <span class="kicker">RX-8 Build</span>
         <h3>Dual Halo Ring Retrofit</h3>
         <p>Both headlights came apart down to the housing — lens desealed, reflector out, factory harness mapped before anything got cut. A halo ring went in around each projector, wired clean off the low-beam circuit so there's no separate switch or extra wiring hanging around under the hood.</p>
         <p>Before either housing went back on the car, it sat wired to a spare battery on the garage floor for a full test run — checking the rings stayed even, no flicker, no dead spots, before committing to the reseal.</p>
-        <div class="spec-list">
+        <div class="spec-line">
           <span>Dual halo rings, both sides</span>
           <span>Wired off the factory low-beam circuit</span>
           <span>Bench tested before reinstall</span>
@@ -59,23 +60,21 @@
       </div>
     </div>
 
-    <div class="build">
-      <div class="build-art">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#0f131a"/>
-          <circle cx="200" cy="150" r="18" stroke="#4c8dff" fill="none" stroke-width="1" opacity=".5"/>
-          <circle cx="200" cy="150" r="34" stroke="#4c8dff" fill="none" stroke-width="1" opacity=".42"/>
-          <circle cx="200" cy="150" r="50" stroke="#4c8dff" fill="none" stroke-width="1" opacity=".34"/>
-          <circle cx="200" cy="150" r="66" stroke="#4c8dff" fill="none" stroke-width="1" opacity=".26"/>
-          <circle cx="200" cy="150" r="82" stroke="#8ab6ff" fill="none" stroke-width="1.5" opacity=".7"/>
-        </svg>
+    <div class="feature-row">
+      <div class="feature-media">
+        <div class="placeholder-img">
+          <div class="ph-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            Photo coming soon
+          </div>
+        </div>
       </div>
-      <div class="build-copy">
-        <span class="eyebrow">Build 011</span>
+      <div class="feature-copy">
+        <span class="kicker">Taillights</span>
         <h3>Infinity Mirror Tails</h3>
-        <p>Infinity mirror inserts behind the tail reflectors — one-way film on the outer lens, a mirrored backing plate behind an addressable LED ring, spaced to get real depth instead of a flat ring of dots. Owner wanted color-shift capability, so the ring runs off a small hidden controller with a remote instead of a fixed color.</p>
+        <p>Infinity mirror inserts behind the tail reflectors — one-way film on the outer lens, a mirrored backing plate behind an addressable LED ring, spaced to get real depth instead of a flat ring of dots.</p>
         <p>These take longer than a standard strip swap because the spacing between the two mirror layers has to be dialed in by eye — too tight and you lose the tunnel effect, too far and the reflection gets muddy.</p>
-        <div class="spec-list">
+        <div class="spec-line">
           <span>Two-layer mirror film</span>
           <span>Addressable RGB ring</span>
           <span>Remote color control</span>
@@ -83,55 +82,42 @@
       </div>
     </div>
 
-    <div class="build">
-      <div class="build-art">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#0f131a"/>
-          <rect x="70" y="90" width="260" height="120" rx="4" stroke="#262e3a" fill="none"/>
-          <rect x="90" y="105" width="220" height="90" rx="2" fill="url(#chrome)"/>
-          <defs>
-            <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#3a4250"/>
-              <stop offset=".5" stop-color="#c9d2de"/>
-              <stop offset="1" stop-color="#262e3a"/>
-            </linearGradient>
-          </defs>
-          <g stroke="#4c8dff" stroke-width="3" stroke-linecap="round" opacity=".9">
-            <line x1="105" y1="185" x2="120" y2="185"/>
-            <line x1="128" y1="185" x2="143" y2="185"/>
-            <line x1="151" y1="185" x2="166" y2="185"/>
-            <line x1="174" y1="185" x2="189" y2="185" opacity=".6"/>
-            <line x1="197" y1="185" x2="212" y2="185" opacity=".3"/>
-          </g>
-        </svg>
+    <div class="feature-row">
+      <div class="feature-media">
+        <div class="placeholder-img">
+          <div class="ph-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            Photo coming soon
+          </div>
+        </div>
       </div>
-      <div class="build-copy">
-        <span class="eyebrow">Build 009</span>
+      <div class="feature-copy">
+        <span class="kicker">Taillights</span>
         <h3>Chrome Delete Tails</h3>
         <p>Factory red lenses stripped down and the reflector bucket re-plated to a chrome finish, so the housing reads almost blank until the lights are on. A sequenced strip sits underneath the reflector, tucked far enough back that you see the sweep, not the diodes.</p>
-        <p>Chrome and clear jobs live or die on the plating — we send reflectors out to a vacuum-metalizing shop we trust rather than using spray chrome, which fogs and yellows within a season.</p>
-        <div class="spec-list">
+        <p>Chrome and clear jobs live or die on the plating — reflectors go out to a vacuum-metalizing shop rather than using spray chrome, which fogs and yellows within a season.</p>
+        <div class="spec-line">
           <span>Vacuum-plated reflector</span>
-          <span>Hidden 5-segment sequential</span>
+          <span>Hidden sequential strip</span>
           <span>Clear or chrome lens</span>
         </div>
       </div>
     </div>
 
-    <div class="build">
-      <div class="build-art">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#0f131a"/>
-          <path d="M40 220 Q60 260 100 260 L300 260 Q340 260 360 220 L360 200 L40 200 Z" stroke="#262e3a" fill="#141922"/>
-          <path d="M55 234 L345 234" stroke="#4c8dff" stroke-width="4" stroke-linecap="round" opacity=".85"/>
-          <path d="M55 246 L345 246" stroke="#8ab6ff" stroke-width="2" stroke-linecap="round" opacity=".4"/>
-        </svg>
+    <div class="feature-row">
+      <div class="feature-media">
+        <div class="placeholder-img">
+          <div class="ph-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            Photo coming soon
+          </div>
+        </div>
       </div>
-      <div class="build-copy">
-        <span class="eyebrow">Install</span>
+      <div class="feature-copy">
+        <span class="kicker">Install</span>
         <h3>Underglow — Daily Driver</h3>
-        <p>Not every job is a full teardown. This one was a straightforward underglow install: four RGB bars mounted to the subframe with steel brackets instead of the flimsy plastic clips most kits ship with, routed away from the exhaust heat shield, and wired to switch off automatically above a set speed so it's road-legal off-hours only.</p>
-        <div class="spec-list">
+        <p>Not every job is a full teardown. This one was a straightforward underglow install: four RGB bars mounted to the subframe with steel brackets instead of the flimsy plastic clips most kits ship with, routed away from the exhaust heat shield, and wired to switch off automatically above a set speed.</p>
+        <div class="spec-line">
           <span>4-bar RGB underglow</span>
           <span>App color control</span>
           <span>Auto-off above set speed</span>
@@ -142,14 +128,13 @@
   </div>
 </section>
 
-
 <section class="alt tight">
   <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;">
     <div>
-      <span class="eyebrow">Currently In The Queue</span>
-      <h2 style="margin-top:.5em; font-size:1.6rem;">Booking 3–4 weeks out right now.</h2>
+      <span class="kicker">Currently In The Queue</span>
+      <h2 style="margin-top:.6em; font-size:1.5rem; font-weight:400;">Booking 3–4 weeks out right now.</h2>
     </div>
-    <a href="contact.html" class="btn">Get In Line →</a>
+    <a href="contact.html" class="btn btn-fill">Get In Line →</a>
   </div>
 </section>
 
@@ -157,8 +142,8 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="mark"><span class="dot"></span>RETROFIT ILLUMINATION</span>
-        <p style="color:var(--ink-dim); font-size:.9rem; margin-top:1rem; max-width:32ch;">Custom headlight and taillight retrofits, plus underglow, ambient, and footwell lighting. Built and tested in-house.</p>
+        <span class="mark" style="display:flex; align-items:center; gap:.7em; font-weight:600;"><span class="logo-slot">Logo</span>RETROFIT ILLUMINATION</span>
+        <p style="color:var(--ink-dim); font-size:.9rem; margin-top:1.2rem; max-width:32ch;">Custom headlight and taillight retrofits, plus underglow, ambient, and footwell lighting. Built and tested in-house.</p>
       </div>
       <div>
         <h5>Services</h5>
