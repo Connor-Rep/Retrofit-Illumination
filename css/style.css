@@ -70,7 +70,7 @@ p{ margin:0; }
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line-soft);
 }
-.site-nav .wrap{
+.site-nav > .wrap{
   display:flex; align-items:center; justify-content:space-between;
   height: 78px;
 }
