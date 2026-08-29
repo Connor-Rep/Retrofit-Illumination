@@ -465,6 +465,20 @@ footer{ border-top: 1px solid var(--line-soft); padding: 56px 0 30px; background
   flex-wrap:wrap; gap:.8rem;
 }
 
+/* ---------- inline photo (about page etc) ---------- */
+.photo-frame{
+  border: 5px solid var(--panel-2);
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+  transform: rotate(-1.2deg);
+  max-width: 340px;
+  margin: 0 auto 2.4rem;
+}
+.photo-frame img{ display:block; width:100%; height:auto; }
+.photo-frame figcaption{
+  font-family: var(--font-hand); font-weight:700; font-size:.9rem;
+  color: var(--ink-dim); text-align:center; padding-top:.5rem;
+}
+
 /* ---------- page header (non-home pages) ---------- */
 .page-head{
   padding: 60px 0 40px;
@@ -485,6 +499,13 @@ footer{ border-top: 1px solid var(--line-soft); padding: 56px 0 30px; background
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 .build-art svg, .build-art img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.build-art .inset{
+  position:absolute; inset:auto; bottom:-10px; right:-10px;
+  width:44%; z-index:3;
+  border:5px solid #f3ede4; box-shadow:0 10px 24px rgba(0,0,0,.5);
+  transform: rotate(4deg);
+}
+.build-art .inset img{ position:static; display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
 .build-copy .eyebrow{ margin-bottom: .8rem; }
 .build-copy h3{ font-size: 1.5rem; margin-bottom: .7rem; }
 .build-copy p{ color: var(--ink-dim); margin-bottom: 1rem; }
