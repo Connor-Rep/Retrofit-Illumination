@@ -3,7 +3,7 @@
    Editorial, monochrome, dark. Typography and photography carry it.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root{
   --bg:        #0b0b0c;
@@ -16,12 +16,13 @@
   --ink-faint: #67635c;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-head: 'Rajdhani', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --max: 1180px;
   --edge: clamp(20px, 5vw, 64px);
 }
 
-*, *::before, *::after{ box-sizing: border-box; }
+*, *::before, *::after{ box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html{ scroll-behavior: smooth; }
 body{
   margin:0;
@@ -34,20 +35,23 @@ body{
 }
 
 img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
+a{ color:inherit; text-decoration:none; outline:none; }
+a:focus, button:focus, input:focus, select:focus, textarea:focus{ outline: none; }
 ul{ margin:0; padding:0; list-style:none; }
-h1,h2,h3,h4{ font-family: var(--font); font-weight:500; margin:0; letter-spacing:-.01em; line-height:1.15; }
+h1,h2,h3,h4{ font-family: var(--font-head); font-weight:600; margin:0; letter-spacing:-.005em; line-height:1.12; }
 p{ margin:0; }
 
 .wrap{ max-width: var(--max); margin: 0 auto; padding-left: var(--edge); padding-right: var(--edge); }
 
-::selection{ background: var(--ink); color: var(--bg); }
+::selection{ background: rgba(255,255,255,.25); color: var(--ink); }
+::-moz-selection{ background: rgba(255,255,255,.25); color: var(--ink); }
 
 /* ---------- utility text ---------- */
 .kicker{
+  font-family: var(--font-head);
   font-weight: 600;
-  font-size: .76rem;
-  letter-spacing: .14em;
+  font-size: .88rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
@@ -76,21 +80,27 @@ p{ margin:0; }
   border: 1px solid var(--line);
   border-radius: 2px;
   display:flex; align-items:center; justify-content:center;
-  font-size: .5rem; font-weight:700; letter-spacing:.05em;
+  font-family: var(--font-head);
+  font-size: .55rem; font-weight:700; letter-spacing:.05em;
   color: var(--ink-faint); text-transform:uppercase;
   flex-shrink:0;
 }
 .brand .mark{
-  font-weight: 600;
-  font-size: 1.02rem;
-  letter-spacing: .01em;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.24rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
   color: var(--ink);
 }
 
 .nav-links{ display:flex; align-items:center; gap:2.2rem; }
 .nav-links a{
-  font-weight: 500;
-  font-size: .92rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: .02em;
+  text-transform: uppercase;
   color: var(--ink-dim);
   position: relative;
   padding: .3rem 0;
@@ -104,8 +114,11 @@ p{ margin:0; }
 }
 
 .btn{
-  font-weight: 600;
-  font-size: .86rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .98rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
   padding: .75em 1.35em;
   border: 1px solid var(--ink);
   border-radius: 2px;
@@ -124,7 +137,9 @@ p{ margin:0; }
 
 .link-arrow{
   display:inline-flex; align-items:center; gap:.5em;
-  font-weight: 600; font-size: .92rem; color: var(--ink);
+  font-family: var(--font-head);
+  font-weight: 700; font-size: 1.05rem; letter-spacing:.02em; text-transform:uppercase;
+  color: var(--ink);
   padding: .78em 0;
   border-bottom: 1px solid transparent;
 }
@@ -135,11 +150,11 @@ p{ margin:0; }
 .nav-cta{ display:flex; align-items:center; gap:1.4rem; }
 
 /* ============ HERO ============ */
-.hero{ padding: 72px 0 0; border-bottom: 1px solid var(--line-soft); }
+.hero{ padding: 34px 0 0; border-bottom: 1px solid var(--line-soft); }
 .hero-copy{ padding-bottom: 3rem; max-width: 760px; }
 .hero-copy .kicker{ margin-bottom: 1.2rem; }
 .hero h1{
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   line-height: 1.06;
   margin-bottom: .7em;
@@ -148,7 +163,7 @@ p{ margin:0; }
 .hero-actions{ display:flex; gap: 1rem; margin-top: 2rem; flex-wrap:wrap; }
 
 .hero-photo{ position:relative; border-top: 1px solid var(--line-soft); }
-.hero-photo img{ width:100%; height:100%; aspect-ratio: 16/9; object-fit:cover; object-position: center 42%; }
+.hero-photo img{ width:100%; height:100%; aspect-ratio: 16/9; object-fit:cover; object-position: center 30%; }
 .hero-photo .placeholder-img{ aspect-ratio: 16/9; }
 @media (max-width: 640px){
   .hero-photo img, .hero-photo .placeholder-img{ aspect-ratio: 4/3; }
@@ -165,7 +180,7 @@ section{ padding: 84px 0; }
 section.tight{ padding: 54px 0; }
 .sec-head{ margin-bottom: 3rem; max-width: 640px; }
 .sec-head .kicker{ margin-bottom: 1rem; }
-.sec-head h2{ font-weight:400; font-size: clamp(1.7rem, 3vw, 2.5rem); margin-top:.3em; }
+.sec-head h2{ font-weight:500; font-size: clamp(1.7rem, 3vw, 2.5rem); margin-top:.3em; }
 .sec-head .lede{ margin-top:.7em; }
 .sec-head-row{
   display:flex; justify-content:space-between; align-items:flex-end;
@@ -184,7 +199,7 @@ section.tight{ padding: 54px 0; }
   transition: opacity .15s ease;
 }
 .index-row .num{
-  font-weight: 300; font-size: 1.6rem; color: var(--ink-faint);
+  font-family: var(--font-head); font-weight: 600; font-size: 1.8rem; color: var(--ink-faint);
 }
 .index-row h3{ font-weight:600; font-size: 1.2rem; margin-bottom:.5rem; }
 .index-row p{ color: var(--ink-dim); font-size: .95rem; max-width: 62ch; }
@@ -201,7 +216,7 @@ section.tight{ padding: 54px 0; }
   border-left: 1px solid var(--line-soft);
 }
 .process li{ padding: 2rem 1.6rem; border-right: 1px solid var(--line-soft); }
-.process .step-num{ font-weight:300; font-size:1.4rem; color:var(--ink-faint); display:block; margin-bottom:1rem; }
+.process .step-num{ font-family: var(--font-head); font-weight:600; font-size:1.6rem; color:var(--ink-faint); display:block; margin-bottom:1rem; }
 .process h4{ font-weight:600; font-size: 1rem; margin-bottom:.6rem; }
 .process p{ font-size:.88rem; color:var(--ink-dim); }
 
@@ -252,7 +267,7 @@ section.tight{ padding: 54px 0; }
 .prod-row .placeholder-img{ aspect-ratio: 4/3; }
 .prod-row h3{ font-weight:600; font-size: 1.08rem; margin-bottom:.4rem; }
 .prod-row p{ color: var(--ink-dim); font-size:.9rem; max-width:48ch; }
-.prod-row .price{ font-weight:700; font-size:1rem; text-align:right; white-space:nowrap; }
+.prod-row .price{ font-family: var(--font-head); font-weight:700; font-size:1.2rem; text-align:right; white-space:nowrap; }
 .prod-row .price small{ display:block; color:var(--ink-faint); font-weight:500; font-size:.72rem; }
 
 /* ---------- faq ---------- */
@@ -276,16 +291,16 @@ section.tight{ padding: 54px 0; }
 .field{ display:flex; flex-direction:column; gap:.5rem; margin-bottom: 1.5rem; }
 .field label{ font-weight: 600; font-size: .8rem; color: var(--ink-dim); }
 .field input, .field select, .field textarea{
-  background: transparent;
-  border: none; border-bottom: 1px solid var(--line);
-  border-radius: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
   color: var(--ink);
-  padding: .7em 0;
+  padding: .85em .9em;
   font-family: var(--font);
   font-size: 1rem;
 }
-.field select{ background: var(--bg); }
-.field input:focus, .field select:focus, .field textarea:focus{ outline: none; border-color: var(--ink); }
+.field input::placeholder, .field textarea::placeholder{ color: var(--ink-faint); }
+.field input:focus, .field select:focus, .field textarea:focus{ outline: none; border-color: var(--ink-dim); background: var(--bg-alt); }
 .field-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
 .form-note{ font-size:.82rem; color: var(--ink-faint); margin-top: 1.3rem; }
 
@@ -296,35 +311,32 @@ section.tight{ padding: 54px 0; }
 .contact-side .info-block p{ color: var(--ink-dim); font-size:.92rem; }
 
 /* ---------- footer ---------- */
-footer{ border-top: 1px solid var(--line-soft); padding: 60px 0 30px; }
+footer{ border-top: 1px solid var(--line-soft); padding: 30px 0 22px; }
 .foot-top{
-  display:flex; justify-content:space-between; align-items:flex-start;
-  gap: 2.5rem; flex-wrap:wrap; padding-bottom: 2.6rem;
+  display:flex; justify-content:space-between; align-items:center;
+  gap: 1.6rem; flex-wrap:wrap; padding-bottom: 1.4rem;
 }
-.foot-brand .brand{ margin-bottom: 1rem; }
-.foot-brand p{ color: var(--ink-dim); font-size:.92rem; max-width: 34ch; }
-.foot-nav{ display:flex; gap: 2.6rem; flex-wrap:wrap; }
-.foot-nav-col h5{ font-weight: 600; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.1rem; }
-.foot-nav-col ul li{ margin-bottom: .65rem; }
-.foot-nav-col ul li a{ color: var(--ink-dim); font-size:.92rem; }
-.foot-nav-col ul li a:hover{ color: var(--ink); }
-.foot-social{ display:flex; gap: .9rem; margin-top: 1.3rem; }
+.foot-brand .brand{ }
+.foot-nav{ display:flex; align-items:center; gap: 1.6rem; flex-wrap:wrap; }
+.foot-nav a{ color: var(--ink-dim); font-size:.92rem; }
+.foot-nav a:hover{ color: var(--ink); }
+.foot-social{ display:flex; gap: .6rem; }
 .foot-social a{
-  width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 2px;
+  width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 2px;
   display:flex; align-items:center; justify-content:center;
   color: var(--ink-faint); transition: color .15s ease, border-color .15s ease;
 }
 .foot-social a:hover{ color: var(--ink); border-color: var(--ink-dim); }
-.foot-social svg{ width:16px; height:16px; }
+.foot-social svg{ width:15px; height:15px; }
 .foot-bottom{
   display:flex; justify-content:space-between; align-items:center;
-  padding-top: 1.6rem; border-top: 1px solid var(--line-soft);
-  font-size: .8rem; color: var(--ink-faint); flex-wrap:wrap; gap:.8rem;
+  padding-top: 1.1rem; border-top: 1px solid var(--line-soft);
+  font-size: .78rem; color: var(--ink-faint); flex-wrap:wrap; gap:.6rem;
 }
 
 /* ---------- page header ---------- */
-.page-head{ padding: 60px 0 44px; border-bottom: 1px solid var(--line-soft); }
-.page-head h1{ font-weight:400; font-size: clamp(2rem, 4vw, 3.2rem); margin-top:.4em; }
+.page-head{ padding: 32px 0 36px; border-bottom: 1px solid var(--line-soft); }
+.page-head h1{ font-weight:500; font-size: clamp(2rem, 4vw, 3.2rem); margin-top:.4em; }
 
 /* ---------- article (about page) ---------- */
 .article{ max-width: 700px; }
