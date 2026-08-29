@@ -12,9 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // mark current nav link
   const here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
     if (a.getAttribute('href') === here) a.classList.add('is-active');
   });
+
+  // mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const open = !menuToggle.classList.contains('is-open');
+      menuToggle.classList.toggle('is-open', open);
+      mobileMenu.classList.toggle('is-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menuToggle.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+      });
+    });
+  }
 
   // faq accordions
   document.querySelectorAll('.faq-item h4').forEach(h => {

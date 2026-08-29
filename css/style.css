@@ -3,7 +3,7 @@
    Editorial, monochrome, dark. Typography and photography carry it.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root{
   --bg:        #0b0b0c;
@@ -16,7 +16,7 @@
   --ink-faint: #67635c;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-head: 'Rajdhani', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-head: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --max: 1180px;
   --edge: clamp(20px, 5vw, 64px);
@@ -141,6 +141,42 @@ p{ margin:0; }
 
 .nav-cta{ display:flex; align-items:center; gap:1.4rem; }
 
+.menu-toggle{
+  display:none;
+  align-items:center; gap:.6em;
+  height: 38px; padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: transparent;
+  font-family: var(--font-head);
+  font-weight: 700; font-size: .82rem; letter-spacing:.1em; text-transform:uppercase;
+  color: var(--ink);
+  cursor: pointer;
+}
+.menu-toggle .ind{ font-family: var(--font-head); font-size: 1rem; line-height:1; }
+.menu-toggle.is-open .ind::before{ content:"×"; }
+.menu-toggle:not(.is-open) .ind::before{ content:"+"; }
+
+.mobile-menu{
+  position: absolute; left:0; right:0; top:100%;
+  background: rgba(11,11,12,.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-soft);
+  max-height: 0; overflow: hidden;
+  transition: max-height .25s ease;
+}
+.mobile-menu.is-open{ max-height: 420px; }
+.mobile-menu .wrap{ padding-top:.5rem; padding-bottom:1.6rem; }
+.mobile-menu li{ border-bottom: 1px solid var(--line-soft); }
+.mobile-menu a{
+  display:block; padding: 1rem 0;
+  font-family: var(--font-head);
+  font-weight: 600; font-size: 1.15rem; letter-spacing:.02em; text-transform:uppercase;
+  color: var(--ink-dim);
+}
+.mobile-menu a.is-active{ color: var(--ink); }
+.mobile-menu .btn{ margin-top: 1.2rem; width:100%; justify-content:center; }
+
 /* ============ HERO ============ */
 .hero{ padding: 34px 0 0; border-bottom: 1px solid var(--line-soft); }
 .hero-copy{ padding-bottom: 3rem; max-width: 760px; }
@@ -213,9 +249,9 @@ section.tight{ padding: 54px 0; }
 .process p{ font-size:.88rem; color:var(--ink-dim); }
 
 /* ---------- photo grid (homepage featured work) ---------- */
-.photo-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.photo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
 .photo-grid figure{ margin:0; background: var(--bg); display:flex; flex-direction:column; }
-.photo-grid img{ width:100%; height:100%; object-fit:cover; flex:1; min-height:260px; }
+.photo-grid img{ width:100%; aspect-ratio: 4/3; object-fit:cover; }
 .photo-grid figcaption{ padding: 1rem 1.2rem; font-size:.85rem; color: var(--ink-faint); }
 .photo-grid figcaption strong{ color: var(--ink-dim); font-weight:600; display:block; margin-bottom:.2rem; }
 
@@ -279,8 +315,9 @@ section.tight{ padding: 54px 0; }
 .faq-item.open p{ margin-top: .9rem; max-height: 240px; }
 
 /* ---------- quote / contact ---------- */
-.quote-panel{ border-top: 1px solid var(--line-soft); padding-top: 2.5rem; }
-.field{ display:flex; flex-direction:column; gap:.5rem; margin-bottom: 1.5rem; }
+.field{ display:flex; flex-direction:column; gap:.5rem; margin-bottom: 1.6rem; }
+.field-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-bottom: 1.6rem; }
+.field-row .field{ margin-bottom: 0; }
 .field label{ font-weight: 600; font-size: .8rem; color: var(--ink-dim); }
 .field input, .field select, .field textarea{
   background: var(--panel);
@@ -293,11 +330,9 @@ section.tight{ padding: 54px 0; }
 }
 .field input::placeholder, .field textarea::placeholder{ color: var(--ink-faint); }
 .field input:focus, .field select:focus, .field textarea:focus{ outline: none; border-color: var(--ink-dim); background: var(--bg-alt); }
-.field-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
-.form-note{ font-size:.82rem; color: var(--ink-faint); margin-top: 1.3rem; }
 
-.contact-side{ border-top: 1px solid var(--line-soft); }
 .contact-side .info-block{ padding: 1.6rem 0; border-bottom: 1px solid var(--line-soft); }
+.contact-side .info-block:first-child{ padding-top: 0; }
 .contact-side .info-block .kicker{ margin-bottom:.6rem; }
 .contact-side .info-block h3{ font-weight:600; font-size:1.02rem; margin-bottom:.4rem; }
 .contact-side .info-block p{ color: var(--ink-dim); font-size:.92rem; }
@@ -351,6 +386,8 @@ footer{ border-top: 1px solid var(--line-soft); padding: 30px 0 22px; }
 }
 @media (max-width: 640px){
   .nav-links{ display:none; }
+  .nav-cta .btn.small{ display:none; }
+  .menu-toggle{ display:flex; }
   .process{ grid-template-columns: 1fr; }
   .process li{ border-bottom: 1px solid var(--line-soft); }
   .field-row{ grid-template-columns: 1fr; }
