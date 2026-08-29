@@ -2,6 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // nav goes from transparent to a blurred panel once the page scrolls
+  const nav = document.querySelector('.site-nav');
+  if (nav) {
+    const setScrolled = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
+  }
+
   // mark current nav link
   const here = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
