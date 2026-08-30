@@ -1,5 +1,5 @@
 /* ============================================================
-   Retrofit Illumination — house style
+   Retrofit Illumination: house style
    Editorial, monochrome, dark. Typography and photography carry it.
    ============================================================ */
 
@@ -57,6 +57,9 @@ p{ margin:0; }
   color: var(--ink-faint);
 }
 .lede{ color: var(--ink-dim); font-size: 1.05rem; max-width: 58ch; font-weight:400; }
+
+p a{ text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
+p a:hover{ color: var(--ink-dim); }
 
 /* ---------- nav ---------- */
 .site-nav{
@@ -253,8 +256,10 @@ section.tight{ padding: 54px 0; }
   border-bottom: 1px solid var(--line-soft);
   transition: opacity .15s ease;
 }
-.index-row .num{
-  font-family: var(--font-head); font-weight: 600; font-size: 1.4rem; line-height: 1.2; color: var(--ink-faint);
+.index-row .row-icon{
+  color: var(--ink-faint);
+  display:flex; align-items:flex-start; justify-content:center;
+  padding-top:.15rem;
 }
 .index-row h3{ font-weight:600; font-size: 1.2rem; line-height: 1.2; margin-bottom:.5rem; }
 .index-row p{ color: var(--ink-dim); font-size: .95rem; max-width: 62ch; }

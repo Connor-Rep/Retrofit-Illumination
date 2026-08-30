@@ -1,4 +1,4 @@
-// Retrofit Illumination — site behavior. No frameworks, no build step.
+// Retrofit Illumination: site behavior. No frameworks, no build step.
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // shop search — filters product rows, hides empty sections
+  // shop search: filters product rows, hides empty sections
   const shopSearch = document.getElementById('shop-search');
   if (shopSearch) {
     const rows = Array.from(document.querySelectorAll('.prod-row'));
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = new FormData(form);
       const get = (k) => (data.get(k) || '').toString().trim();
 
-      const subject = `Quote request — ${get('vehicle') || 'vehicle TBD'}`;
+      const subject = `Quote request: ${get('vehicle') || 'vehicle TBD'}`;
       const body =
         `Name: ${get('name')}\n` +
         `Email: ${get('email')}\n` +
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = mailto;
 
       const note = document.getElementById('form-status');
-      if (note) note.textContent = 'Opening your email client — send it over and we’ll reply within a couple of days.';
+      if (note) note.textContent = 'Opening your email client. Send it over and we’ll reply within a couple of days.';
     });
   }
 
