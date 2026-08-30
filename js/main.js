@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // shop search — filters product rows, hides empty sections
+  const shopSearch = document.getElementById('shop-search');
+  if (shopSearch) {
+    const rows = Array.from(document.querySelectorAll('.prod-row'));
+    const sections = Array.from(document.querySelectorAll('section')).filter(s => s.querySelector('.prod-row'));
+    shopSearch.addEventListener('input', () => {
+      const q = shopSearch.value.trim().toLowerCase();
+      rows.forEach(row => {
+        const match = !q || row.textContent.toLowerCase().includes(q);
+        row.hidden = !match;
+      });
+      sections.forEach(sec => {
+        const anyVisible = Array.from(sec.querySelectorAll('.prod-row')).some(r => !r.hidden);
+        sec.hidden = !anyVisible;
+      });
+    });
+  }
+
   // faq accordions
   document.querySelectorAll('.faq-item h4').forEach(h => {
     h.addEventListener('click', () => {

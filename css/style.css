@@ -314,6 +314,20 @@ section.tight{ padding: 54px 0; }
 .feature-copy .spec-line{ margin-top:1.2rem; font-size:.86rem; color:var(--ink-faint); }
 .feature-copy .spec-line span:not(:last-child)::after{ content:"·"; margin-left:.9rem; margin-right:.9rem; color:var(--line); }
 
+/* ---------- shop search ---------- */
+.shop-search{
+  display:flex; align-items:center; gap:.7rem;
+  border:1px solid var(--line); background:var(--panel);
+  padding:.75em 1em; max-width: 420px;
+  margin-top: 1.8rem;
+}
+.shop-search svg{ flex-shrink:0; color:var(--ink-faint); }
+.shop-search input{
+  border:none; background:transparent; outline:none; color:var(--ink);
+  font-family:var(--font); font-size:.95rem; width:100%;
+}
+.shop-search input::placeholder{ color:var(--ink-faint); }
+
 /* ---------- shop product row ---------- */
 .prod-row{
   display:grid; grid-template-columns: 220px 1fr auto; gap: 1.8rem; align-items:center;
@@ -322,6 +336,7 @@ section.tight{ padding: 54px 0; }
 .prod-row .placeholder-img{ aspect-ratio: 4/3; }
 .prod-row h3{ font-weight:600; font-size: 1.08rem; margin-bottom:.4rem; }
 .prod-row p{ color: var(--ink-dim); font-size:.9rem; max-width:48ch; }
+.prod-cta{ display:flex; flex-direction:column; align-items:flex-end; gap:.7rem; }
 .prod-row .price{ font-family: var(--font-head); font-weight:700; font-size:1.2rem; text-align:right; white-space:nowrap; }
 .prod-row .price small{ display:block; color:var(--ink-faint); font-weight:500; font-size:.72rem; }
 
@@ -420,7 +435,8 @@ footer{ border-top: 1px solid var(--line-soft); padding: 30px 0 22px; }
   .feature-row, .feature-row:nth-child(even) .feature-media{ grid-template-columns: 1fr; order:0; }
   .feature-row{ grid-template-columns: 1fr; gap: 1.4rem; padding: 2.2rem 0; }
   .prod-row{ grid-template-columns: 140px 1fr; }
-  .prod-row .price{ grid-column: 1 / -1; text-align:left; margin-top:.5rem; }
+  .prod-cta{ grid-column: 1 / -1; flex-direction:row; justify-content:space-between; align-items:center; margin-top:.5rem; }
+  .prod-row .price{ text-align:left; }
 }
 @media (max-width: 640px){
   .nav-links{ display:none; }
