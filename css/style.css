@@ -253,6 +253,9 @@ section.tight{ padding: 54px 0; }
   border-bottom: 1px solid var(--line-soft);
   transition: opacity .15s ease;
 }
+.index-row .row-icon{
+  width: 46px; height: 34px; color: var(--ink-faint); flex-shrink:0;
+}
 .index-row .num{
   font-family: var(--font-head); font-weight: 600; font-size: 1.4rem; line-height: 1.2; color: var(--ink-faint);
 }
