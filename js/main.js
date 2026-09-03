@@ -34,24 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // shop search: filters product cards, hides empty category groups
+  // shop search: filters product cards, hides empty sections
   const shopSearch = document.getElementById('shop-search');
   if (shopSearch) {
     const cards = Array.from(document.querySelectorAll('.prod-card'));
-    const groups = Array.from(document.querySelectorAll('.shop-grid')).map(grid => ({
-      grid,
-      cat: grid.previousElementSibling && grid.previousElementSibling.classList.contains('shop-cat') ? grid.previousElementSibling : null
-    }));
+    const sections = Array.from(document.querySelectorAll('section')).filter(s => s.querySelector('.prod-card'));
     shopSearch.addEventListener('input', () => {
       const q = shopSearch.value.trim().toLowerCase();
       cards.forEach(card => {
         const match = !q || card.textContent.toLowerCase().includes(q);
         card.hidden = !match;
       });
-      groups.forEach(({ grid, cat }) => {
-        const anyVisible = Array.from(grid.querySelectorAll('.prod-card')).some(c => !c.hidden);
-        grid.hidden = !anyVisible;
-        if (cat) cat.hidden = !anyVisible;
+      sections.forEach(sec => {
+        const anyVisible = Array.from(sec.querySelectorAll('.prod-card')).some(c => !c.hidden);
+        sec.hidden = !anyVisible;
       });
     });
   }
