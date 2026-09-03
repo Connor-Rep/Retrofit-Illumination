@@ -34,20 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // shop search: filters product rows, hides empty sections
+  // shop search: filters product cards, hides empty category groups
   const shopSearch = document.getElementById('shop-search');
   if (shopSearch) {
-    const rows = Array.from(document.querySelectorAll('.prod-row'));
-    const sections = Array.from(document.querySelectorAll('section')).filter(s => s.querySelector('.prod-row'));
+    const cards = Array.from(document.querySelectorAll('.prod-card'));
+    const groups = Array.from(document.querySelectorAll('.shop-grid')).map(grid => ({
+      grid,
+      cat: grid.previousElementSibling && grid.previousElementSibling.classList.contains('shop-cat') ? grid.previousElementSibling : null
+    }));
     shopSearch.addEventListener('input', () => {
       const q = shopSearch.value.trim().toLowerCase();
-      rows.forEach(row => {
-        const match = !q || row.textContent.toLowerCase().includes(q);
-        row.hidden = !match;
+      cards.forEach(card => {
+        const match = !q || card.textContent.toLowerCase().includes(q);
+        card.hidden = !match;
       });
-      sections.forEach(sec => {
-        const anyVisible = Array.from(sec.querySelectorAll('.prod-row')).some(r => !r.hidden);
-        sec.hidden = !anyVisible;
+      groups.forEach(({ grid, cat }) => {
+        const anyVisible = Array.from(grid.querySelectorAll('.prod-card')).some(c => !c.hidden);
+        grid.hidden = !anyVisible;
+        if (cat) cat.hidden = !anyVisible;
       });
     });
   }
